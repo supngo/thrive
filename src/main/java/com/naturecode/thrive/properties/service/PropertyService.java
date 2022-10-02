@@ -48,7 +48,7 @@ public class PropertyService {
       Function<Property, SiteIntegration> verboseLambda = (Property x)-> { 
         SiteIntegration siteInt = new SiteIntegration();
         siteInt.setId(x.getId());
-        siteInt.setHost(x.getKey().substring(x.getKey().indexOf("sites.") + 1, x.getKey().indexOf("[")));
+        siteInt.setHost(x.getValue());
         siteInt.setPort(x.getPort());
         siteInt.setEnabled(x.isEnabled());
         return siteInt;
