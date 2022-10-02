@@ -38,8 +38,8 @@ public class PropertyService {
       Property prop = PropertyUtil.translate(siteInt, id, currentProps);
       propertyRepo.save(prop);
     } catch (IllegalArgumentException e) {
-      log.error("Exception in createSiteIntegration(): {}", e.toString());
-      throw new PropertyException(e.toString());
+      log.error("Exception in createSiteIntegration(): {}", e.getMessage());
+      throw new PropertyException(e.getMessage());
     }
   }
 
