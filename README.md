@@ -7,7 +7,7 @@ properties as keys and values in a SQL database
 
 # Solution
   ## 1. Requirements:
-  - Docker https://www.docker.com/
+  - Docker (https://www.docker.com/)
   - Postman (https://www.postman.com/) or any other Rest client tools
   - Postgres (https://www.postgresql.org/)
   - Java 17 (https://www.oracle.com/java/technologies/downloads/#java17)
@@ -15,12 +15,18 @@ properties as keys and values in a SQL database
 
   ## 2. How to build and run
   - Checkout the repo at (https://github.com/supngo/thrive.git)
-  - Run locally:
+  
+  - Build:
   ```
-  mvn clean package
-  java -jar target/properties-1.0.0.jar
+  mvn clean install
   ```
-  - Run in Docker Compose:
+  
+  - Run Unit Test:
+  ```
+  mvn clean test
+  ```
+ 
+  - Run locally using Docker Compose:
   ```bash
   mvn install
   docker-compose up --build
