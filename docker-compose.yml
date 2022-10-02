@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  app:
+    container_name: thrive_springboot
+    image: thrive_springboot
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - thrive_postgresql
+  thrive_postgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=mydb

@@ -1,0 +1,17 @@
+server:
+  servlet:
+    context-path: /thrive
+
+spring:
+  datasource:
+    url: jdbc:postgresql://thrive_postgresql:5432/mydb
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: password
+
+  jpa:
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
