@@ -10,8 +10,8 @@ properties as keys and values in a SQL database
   - Docker https://www.docker.com/
   - Postman (https://www.postman.com/) or any other Rest client tools
   - Postgres (https://www.postgresql.org/)
-  - Java 17 (Don't need to install if using docker)
-  - Maven (Don't need to install if using docker)
+  - Java 17 (https://www.oracle.com/java/technologies/downloads/#java17)
+  - Maven 3 (https://maven.apache.org/)
 
   ## 2. How to build and run
   - Checkout the repo at (https://github.com/supngo/thrive.git)
