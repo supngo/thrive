@@ -21,7 +21,6 @@ public class PropertyUtil {
       Optional<Property> latestProp = currentProps
       .stream()
       .min(Comparator.comparing(Property::getIndex));
-      // .orElseThrow(NoSuchElementException::new);
 
       prop.setId(latestProp.get().getId());
       int index = latestProp.get().getIndex() + 1;

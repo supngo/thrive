@@ -43,6 +43,10 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
@@ -80,6 +84,7 @@
 				<configuration>
 					<excludes>
 						<exclude>**/*PropertiesApplication.*</exclude>
+						<exclude>**/*model/*</exclude>
 					</excludes>
 				</configuration>
 				<executions>
@@ -111,7 +116,17 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.20</minimum>
+											<minimum>0.50</minimum>
+										</limit>
+										<limit>
+											<counter>BRANCH</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.50</minimum>
+									 	</limit>
+									 	<limit>
+											<counter>INSTRUCTION</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.50</minimum>
 										</limit>
 									</limits>
 								</rule>

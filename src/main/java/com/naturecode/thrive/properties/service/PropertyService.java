@@ -38,8 +38,8 @@ public class PropertyService {
       Property prop = PropertyUtil.translate(siteInt, id, currentProps);
       propertyRepo.save(prop);
     } catch (IllegalArgumentException e) {
-      log.error("Exception in createSiteIntegration(): {}", e.getMessage());
-      throw new PropertyException(e.getMessage());
+      log.error("Exception in createSiteIntegration(): {}", e.toString());
+      throw new PropertyException(e.toString());
     }
   }
 
@@ -68,7 +68,7 @@ public class PropertyService {
   public void deleteSiteIntegrations(String id, String index) throws PropertyException {
     try {
       List<Property> props = propertyRepo.findByPropId(id);
-      if (props == null || props.isEmpty()) {
+      if (props.isEmpty()) {
         throw new PropertyException("Property ID is invalid");
       }
       String propKey = PropertyUtil.containIndex(props, index);
