@@ -15,9 +15,6 @@ public interface PropertyRepo extends JpaRepository<Property, String> {
   @Query("SELECT p FROM Property p WHERE p.id = ?1")
   List<Property> findByPropId(String id);
 
-  // @Query("DELETE FROM Property p WHERE p.id = ?1 AND p.key= ?2")
-  // void deleteByIdAndIndex(String id, String index);
-
   @Modifying
   @Query("DELETE FROM Property p where p.id=:id AND p.key=:key")
   void deleteByIdAndIndex(@Param("id") String id, @Param("key") String key);
