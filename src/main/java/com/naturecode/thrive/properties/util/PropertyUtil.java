@@ -20,7 +20,7 @@ public class PropertyUtil {
     } else {
       Optional<Property> latestProp = currentProps
       .stream()
-      .min(Comparator.comparing(Property::getIndex));
+      .max(Comparator.comparing(Property::getIndex));
 
       prop.setId(latestProp.get().getId());
       int index = latestProp.get().getIndex() + 1;
